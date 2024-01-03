@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "ClaimBuster_LiveCoverage",
+			"path": "../ClaimBuster_LiveCoverage"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "claimbuster_web"
+	}
+}
