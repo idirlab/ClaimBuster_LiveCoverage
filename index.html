@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClaimBuster Webpage</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
         body {
             margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ffffff; 
+            height: 100vh;
+            font-family: Inter, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh; 
-            position: relative; 
         }
 
         /*corner gradients */
@@ -28,14 +26,10 @@
             background: radial-gradient(ellipse at top right, #37A9FC 0%, #ffffff 70%);
             top: 0;
             right: 0;
-            z-index: -1; 
+            z-index: -1;
         }
 
         body::after {
-            content: '';
-            position: absolute;
-            width: 50%;
-            height: 50%;
             background: radial-gradient(ellipse at bottom left, #37A9FC 0%, #ffffff 70%);
             bottom: 0;
             left: 0;
@@ -44,60 +38,39 @@
         }
 
         header {
-            padding: 20px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         #logo {
             max-width: 40%;
             height: auto;
             display: block;
-            margin: auto;
-            transform: translateX(25px) translateY(-85px); 
+            margin-left: 50px;
         }
 
         #cb-title {
-            width: 207px;
-            height: 21px;
-            flex-shrink: 0;
-            color: #000;
-            text-align: center;
-            font-family: Inter, sans-serif;
-            font-size: 48px;
-            font-style: normal;
-            font-weight: 800;
-            line-height: normal;
-            margin-top: 15px; 
-            transform: translateX(85px) translateY(-85px); 
+            font-size: 70px;
+            font-weight: 700;
+            margin-top: 20px;
         }
 
         #subtitle {
-            color: #000;
-            text-align: center;
-            font-family: Inter, sans-serif;
-            font-size: 34px;
-            font-style: normal;
-            font-weight: 300;
-            line-height: normal;
-            margin-top: 25px; 
-            letter-spacing: 4px;
-            transform: translateX(25px) translateY(-75px); 
+            font-size: 35px;
+            font-weight: 400;
+            margin-bottom: 125px;
         }
 
         #start-now-button {
-            display: inline-block;
             padding: 10px 40px; 
             font-size: 50px; 
-            font-weight: bold;
-            background-color: #ffffff; 
+            font-weight: 700;
             color: #000000; 
             border: 5px solid #0094FF; 
             border-radius: 50px; 
             text-decoration: none;
-            margin-top: 5px; 
-            font-family: 'Montserrat', sans-serif; 
-            letter-spacing: 3px;
-            transform: translateX(15px);
         }
 
     </style>
@@ -105,8 +78,8 @@
 <body>
     <header>
         <img id="logo" src="cb_logo.png" alt="ClaimBuster_logo">
-        <h1 id="cb-title">ClaimBuster</h1>
-        <p id="subtitle">Live Debate Coverage</p>
+        <div id="cb-title">ClaimBuster</div>
+        <div id="subtitle">Live Debate Coverage</div>
     </header>
 
     <a href="#" id="start-now-button">Start Now</a>
