@@ -7,14 +7,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+
+    <div class="landing">
         <img id="logo" src="cb_logo.png" alt="ClaimBuster_logo">
         <div id="cb-title">ClaimBuster</div>
         <div id="subtitle">Live Debate Coverage</div>
-    </header>
+        <a href="#" id="start-now-button">Start Now</a>
+    </div>
 
-    <a href="#" id="start-now-button">Start Now</a>
+    <div class="navbar">
+        <div id="status-text">Status:</div>
+        <div class="switch-container">
+            <div class="switch">
+                <div id="toggle-color"></div>
+                <button id="on-btn" onclick="onClick()">On</button>
+                <button id="off-btn" onclick="offClick()">Off</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
-
 

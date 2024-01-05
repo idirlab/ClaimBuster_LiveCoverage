@@ -3,10 +3,6 @@ body {
     margin: 0;
     height: 100vh;
     font-family: Inter, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 /*corner gradients */
@@ -30,11 +26,12 @@ body::after {
     z-index: -1; 
 }
 
-header {
+.landing {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
 #logo {
@@ -64,4 +61,62 @@ header {
     border: 5px solid #0094FF; 
     border-radius: 50px; 
     text-decoration: none;
+}
+
+.navbar{
+    top:100vh;
+    height: 80px;
+    width: 100%;
+    background: #0D99FF;
+    display: flex;
+    align-items: center;
+}
+
+#status-text{
+    font-size: 50px;
+    font-weight: 600;
+    color: white;
+    margin-left: 70%;
+}
+
+.switch-container{
+    margin-top: 5px;
+    flex:1;
+}
+
+.switch {
+	width: 160px;
+	margin: 35px;
+	position: relative;
+	border-radius: 30px;
+	background: white;
+    display: flex;
+    justify-content: space-evenly;
+    border: 4px solid #000000;
+}
+
+#toggle-color {
+	left: 76px;
+	top: -4px;
+	position: absolute;
+	width: 80px;
+	height: 100%;
+	background: #E84C3D;
+	border-radius: 30px;
+	transition: .5s;
+    border: 4px solid #000000;
+}
+
+#on-btn, #off-btn {
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: none;
+	position: relative;
+    font-size: 30px;
+    font-weight:600;
+}
+
+#off-btn{
+    color:white;
 }
