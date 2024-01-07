@@ -26,11 +26,19 @@
         </div>
     </div>
 
-    <div class="main-controls">
-        Channel Name:
-        <input type="text" id="channel-name-input"></input>
+    <div class="controls-box">
+        <div class="controls">
+            Channel Name:
+            <input type="text" id="channel-name-input">
+        </div>
+        <div class="controls">
+            Threshold Score:
+            <div class="threshold-container">
+                <input type="range" id="threshold-slider" min="1" max="100" steps="1"></input>
+                <input type="text" id="threshold-value-input">
+            </div>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

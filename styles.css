@@ -121,14 +121,18 @@ body::after {
     color:white;
 }
 
-.main-controls{
+.controls-box{
     padding:30px;
     font-size: 35px;
     font-weight: 600;
 }
 
-#channel-name-input{
-    margin: 0 50px;
+.controls{
+    margin-bottom:30px
+}
+
+#channel-name-input, #threshold-value-input{
+    margin-left:50px;
     width:200px;
     text-align: center;
     font-size: 25px;
@@ -136,4 +140,19 @@ body::after {
     font-weight: 500;
     border: 2px solid #000000;
 	outline: none;
+}
+
+.threshold-container{
+    display: flex;
+    align-items: center;
+}
+
+#threshold-slider{
+    margin: 30px 10px;
+    width: 350px; 
+}
+
+#threshold-value-input{
+    width: 100px;
+    height: 35px;
 }
