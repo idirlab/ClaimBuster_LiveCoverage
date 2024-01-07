@@ -60,6 +60,7 @@ body::after {
     color: #000000; 
     border: 5px solid #0094FF; 
     border-radius: 50px; 
+    margin-bottom: 30px; 
     text-decoration: none;
 }
 
@@ -156,3 +157,20 @@ body::after {
     width: 100px;
     height: 35px;
 }
+
+/* Add this to your existing styles or in a new style tag */
+#down-arrow-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust the margin as needed */
+}
+
+#down-arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #000; /* Adjust the color as needed */
+    cursor: pointer;
+}
+
+

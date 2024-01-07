@@ -28,3 +28,16 @@ inputSlider.onblur = (()=>{
   slideValue.classList.remove("show");
 });
 
+document.querySelectorAll('.scroll-trigger').forEach(function(element) {
+  element.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  });
+});
+
+
+
+
