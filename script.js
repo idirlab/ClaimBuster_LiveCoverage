@@ -60,3 +60,28 @@ function resizeTextArea(speakerNameArea, index) {
 speakerNameAreas.forEach((speakerNameArea, index) => {
     speakerNameArea.addEventListener("input", () => resizeTextArea(speakerNameArea, index));
 });
+
+let crossIcons = document.querySelectorAll('#cross-icon');
+
+crossIcons.forEach((crossIcon, index) => {
+    crossIcon.addEventListener("click", () => {
+        // Store the index of the removed element in localStorage
+        localStorage.setItem(`removedElement${index}`, true);
+
+        speakerNameAreas[index].remove();
+        measureWidths[index].remove();
+        crossIcons[index].remove();
+    });
+});
+
+window.onload = function() {
+    crossIcons.forEach((crossIcon, index) => {
+        if (localStorage.getItem(`removedElement${index}`)) {
+            speakerNameAreas[index].remove();
+            measureWidths[index].remove();
+            crossIcons[index].remove();
+        }
+    });
+
+    speakerNameAreas.forEach(resizeTextArea);
+};
