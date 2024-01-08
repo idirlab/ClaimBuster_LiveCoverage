@@ -1,3 +1,25 @@
+const slideValue = document.querySelector("span");
+const inputSlider = document.querySelector("input");
+inputSlider.oninput = (()=>{
+  let value = inputSlider.value;
+  slideValue.textContent = value;
+  slideValue.style.left = (value/2) + "%";
+  slideValue.classList.add("show");
+});
+inputSlider.onblur = (()=>{
+  slideValue.classList.remove("show");
+});
+
+document.querySelectorAll('.scroll-trigger').forEach(function(element) {
+  element.addEventListener('click', function (event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  });
+});
+
 let navbar = document.querySelector('.navbar');
 let landing = document.querySelector('.landing');
 
@@ -27,24 +49,14 @@ function offClick() {
     offButton.style.color = 'white';
 }
 
-const slideValue = document.querySelector("span");
-const inputSlider = document.querySelector("input");
-inputSlider.oninput = (()=>{
-  let value = inputSlider.value;
-  slideValue.textContent = value;
-  slideValue.style.left = (value/2) + "%";
-  slideValue.classList.add("show");
-});
-inputSlider.onblur = (()=>{
-  slideValue.classList.remove("show");
-});
+let speakerNameAreas = document.querySelectorAll('.speaker-name-textbox');
+let measureWidths = document.querySelectorAll('.width-measure');
 
-document.querySelectorAll('.scroll-trigger').forEach(function(element) {
-  element.addEventListener('click', function (event) {
-    event.preventDefault();
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: 'smooth'
-    });
-  });
+function resizeTextArea(speakerNameArea, index) {
+    measureWidths[index].textContent = speakerNameArea.value;
+    speakerNameArea.style.width = `${measureWidths[index].offsetWidth - 30}px`;
+}
+
+speakerNameAreas.forEach((speakerNameArea, index) => {
+    speakerNameArea.addEventListener("input", () => resizeTextArea(speakerNameArea, index));
 });

@@ -64,6 +64,20 @@ body::after {
     text-decoration: none;
 }
 
+#down-arrow-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#down-arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #000;
+    cursor: pointer;
+}
+
 .navbar{
     position: absolute;
     height: 80px;
@@ -137,7 +151,7 @@ body::after {
     margin-bottom:25px;
 }
 
-#channel-name-input, #threshold-value-input{
+#channel-name-input, #threshold-value-input, textarea{
     margin:75px 0 0 50px;
     width:175px;
     height: 35px;
@@ -164,16 +178,31 @@ body::after {
     width: 75px;
 }
 
-#down-arrow-container {
-    text-align: center;
-    margin-top: 20px;
+.speakers-container{
+    width: 50%;
+    padding: 25px 10px;
 }
 
-#down-arrow {
-    width: 0;
-    height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 20px solid #000;
-    cursor: pointer;
+textarea{
+    line-height: 35px;
+    color: #000000;
+    margin: 5px;
+    resize: none;
+    min-width: 140px;
+    padding: 2px 30px ;
+}
+
+.width-measure {
+    position: absolute;
+}
+
+#cross-icon{
+    color: #b7b7b7;
+    font-size: 30px;
+    position: absolute;
+    transform: translateX(-200%) translateY(40%);
+}
+
+#plus-icon{
+    transform: translateY(-40%);
 }
