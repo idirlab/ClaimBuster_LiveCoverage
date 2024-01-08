@@ -65,7 +65,7 @@ body::after {
 }
 
 .navbar{
-    top:100vh;
+    position: absolute;
     height: 80px;
     width: 100%;
     background: #0D99FF;
@@ -73,11 +73,16 @@ body::after {
     align-items: center;
 }
 
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+}
+
 #status-text{
-    font-size: 50px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: 700;
     color: white;
-    margin-left: 70%;
+    margin-left: 75%;
 }
 
 .switch-container{
@@ -124,19 +129,20 @@ body::after {
 
 .controls-box{
     padding:30px;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 600;
 }
 
 .controls{
-    margin-bottom:30px
+    margin-bottom:25px;
 }
 
 #channel-name-input, #threshold-value-input{
-    margin-left:50px;
-    width:200px;
+    margin:75px 0 0 50px;
+    width:175px;
+    height: 35px;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
     font-family: Inter;
     font-weight: 500;
     border: 2px solid #000000;
@@ -154,14 +160,13 @@ body::after {
 }
 
 #threshold-value-input{
-    width: 100px;
-    height: 35px;
+    margin-top: 0px;
+    width: 75px;
 }
 
-/* Add this to your existing styles or in a new style tag */
 #down-arrow-container {
     text-align: center;
-    margin-top: 20px; /* Adjust the margin as needed */
+    margin-top: 20px;
 }
 
 #down-arrow {
@@ -169,8 +174,6 @@ body::after {
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-top: 20px solid #000; /* Adjust the color as needed */
+    border-top: 20px solid #000;
     cursor: pointer;
 }
-
-

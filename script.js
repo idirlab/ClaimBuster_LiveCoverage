@@ -1,3 +1,14 @@
+let navbar = document.querySelector('.navbar');
+let landing = document.querySelector('.landing');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > landing.offsetHeight) {
+        navbar.classList.add('fixed-navbar');
+    } else {
+        navbar.classList.remove('fixed-navbar');
+    }
+});
+
 let toggleColor = document.getElementById('toggle-color')
 let onButton = document.getElementById('on-btn')
 let offButton = document.getElementById('off-btn')
@@ -37,7 +48,3 @@ document.querySelectorAll('.scroll-trigger').forEach(function(element) {
     });
   });
 });
-
-
-
-
