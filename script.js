@@ -50,38 +50,55 @@ function offClick() {
 }
 
 let speakerNameAreas = document.querySelectorAll('.speaker-name-textbox');
-let measureWidths = document.querySelectorAll('.width-measure');
 
-function resizeTextArea(speakerNameArea, index) {
-    measureWidths[index].textContent = speakerNameArea.value;
-    speakerNameArea.style.width = `${measureWidths[index].offsetWidth - 30}px`;
+function resizeTextArea(speakerNameArea) {
+    const measureWidth = speakerNameArea.nextElementSibling;
+    measureWidth.textContent = speakerNameArea.value;
+    speakerNameArea.style.width = `${measureWidth.offsetWidth - 30}px`;
 }
 
-speakerNameAreas.forEach((speakerNameArea, index) => {
-    speakerNameArea.addEventListener("input", () => resizeTextArea(speakerNameArea, index));
+speakerNameAreas.forEach((speakerNameArea) => {
+    speakerNameArea.addEventListener("input", () => resizeTextArea(speakerNameArea));
 });
 
 let crossIcons = document.querySelectorAll('#cross-icon');
 
-crossIcons.forEach((crossIcon, index) => {
-    crossIcon.addEventListener("click", () => {
-        // Store the index of the removed element in localStorage
+// Assuming plusIcon is the element for the + sign
+const plusIcon = document.getElementById('plus-icon');
+
+plusIcon.addEventListener('click', function() {
+    const container = document.querySelector('.speakers-container');
+    const index = document.querySelectorAll('.speaker-name-textbox').length;
+
+    // Create new textarea for speaker name
+    const newSpeakerName = document.createElement('textarea');
+    newSpeakerName.classList.add('speaker-name-textbox');
+    newSpeakerName.placeholder = "Enter Name";
+
+    // Create new span for width measure
+    const newMeasureWidth = document.createElement('span');
+    newMeasureWidth.classList.add('width-measure');
+    newMeasureWidth.style.visibility = 'hidden';
+
+    // Create new cross icon
+    const newCrossIcon = document.createElement('i');
+    newCrossIcon.classList.add('fa-solid', 'fa-xmark');
+    newCrossIcon.id = 'cross-icon';
+
+    // Append new elements to the container
+    container.appendChild(newSpeakerName);
+    container.appendChild(newMeasureWidth);
+    container.appendChild(newCrossIcon);
+
+    // Add event listeners to new elements
+    newSpeakerName.addEventListener("input", () => resizeTextArea(newSpeakerName));
+    newCrossIcon.addEventListener("click", () => {
         localStorage.setItem(`removedElement${index}`, true);
-
-        speakerNameAreas[index].remove();
-        measureWidths[index].remove();
-        crossIcons[index].remove();
+        newSpeakerName.remove();
+        newMeasureWidth.remove();
+        newCrossIcon.remove();
     });
+
+    // Re-append the plusIcon to the container so it moves next to the new elements
+    container.appendChild(plusIcon);
 });
-
-window.onload = function() {
-    crossIcons.forEach((crossIcon, index) => {
-        if (localStorage.getItem(`removedElement${index}`)) {
-            speakerNameAreas[index].remove();
-            measureWidths[index].remove();
-            crossIcons[index].remove();
-        }
-    });
-
-    speakerNameAreas.forEach(resizeTextArea);
-};

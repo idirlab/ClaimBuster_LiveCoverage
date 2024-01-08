@@ -141,7 +141,7 @@ body::after {
     color:white;
 }
 
-.controls-box{
+.controls-container{
     padding:30px;
     font-size: 25px;
     font-weight: 600;
@@ -153,7 +153,7 @@ body::after {
 
 #channel-name-input, #threshold-value-input, textarea{
     margin:75px 0 0 50px;
-    width:175px;
+    width:150px;
     height: 35px;
     text-align: center;
     font-size: 20px;
@@ -178,9 +178,9 @@ body::after {
     width: 75px;
 }
 
-.speakers-container{
+.speakers-container, .hashtags-container{
     width: 50%;
-    padding: 25px 10px;
+    padding: 20px 10px;
 }
 
 textarea{
@@ -188,7 +188,7 @@ textarea{
     color: #000000;
     margin: 5px;
     resize: none;
-    min-width: 140px;
+    min-width: 175px;
     padding: 2px 30px ;
 }
 
@@ -201,8 +201,10 @@ textarea{
     font-size: 30px;
     position: absolute;
     transform: translateX(-200%) translateY(40%);
+    margin: 0 -100;
 }
 
 #plus-icon{
     transform: translateY(-40%);
+    margin-top: 20px;
 }
