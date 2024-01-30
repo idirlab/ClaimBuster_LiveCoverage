@@ -155,7 +155,8 @@ body::after {
     margin-bottom:25px;
 }
 
-#event-name-input, #threshold-value-input, #channel-name-input, textarea{
+#event-name-input, #threshold-value-input, #channel-name-input, 
+#venue-name-input, #time-input, #prefix-input, textarea{
     margin:75px 0 0 50px;
     width:150px;
     height: 35px;
@@ -166,8 +167,12 @@ body::after {
 	outline: none;
 }
 
+#channel-name-input, #venue-name-input, #time-input, #prefix-input{
+    margin-top: 0px;
+}
+
 #event-name-input{
-    min-width: 300px;
+    min-width: 200px;
 }
 
 .threshold-container{
