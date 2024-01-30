@@ -63,34 +63,28 @@ speakerNameAreas.forEach((speakerNameArea) => {
 
 let crossIcons = document.querySelectorAll('#cross-icon');
 
-// Assuming plusIcon is the element for the + sign
 const plusIcon = document.getElementById('plus-icon');
 
 plusIcon.addEventListener('click', function() {
     const container = document.querySelector('.speakers-container');
     const index = document.querySelectorAll('.speaker-name-textbox').length;
 
-    // Create new textarea for speaker name
     const newSpeakerName = document.createElement('textarea');
     newSpeakerName.classList.add('speaker-name-textbox');
     newSpeakerName.placeholder = "Enter Name";
 
-    // Create new span for width measure
     const newMeasureWidth = document.createElement('span');
     newMeasureWidth.classList.add('width-measure');
     newMeasureWidth.style.visibility = 'hidden';
 
-    // Create new cross icon
     const newCrossIcon = document.createElement('i');
     newCrossIcon.classList.add('fa-solid', 'fa-xmark');
     newCrossIcon.id = 'cross-icon';
 
-    // Append new elements to the container
     container.appendChild(newSpeakerName);
     container.appendChild(newMeasureWidth);
     container.appendChild(newCrossIcon);
 
-    // Add event listeners to new elements
     newSpeakerName.addEventListener("input", () => resizeTextArea(newSpeakerName));
     newCrossIcon.addEventListener("click", () => {
         localStorage.setItem(`removedElement${index}`, true);
@@ -99,6 +93,38 @@ plusIcon.addEventListener('click', function() {
         newCrossIcon.remove();
     });
 
-    // Re-append the plusIcon to the container so it moves next to the new elements
     container.appendChild(plusIcon);
+});
+
+const plusIconHashtags = document.getElementById('plus-icon-hashtags');
+
+plusIconHashtags.addEventListener('click', function() {
+    const container = document.querySelector('.hashtags-container');
+    const index = document.querySelectorAll('.hashtag-textbox').length;
+
+    const newHashtag = document.createElement('textarea');
+    newHashtag.classList.add('hashtag-textbox');
+    newHashtag.placeholder = "Enter Hashtag";
+
+    const newMeasureWidth = document.createElement('span');
+    newMeasureWidth.classList.add('width-measure');
+    newMeasureWidth.style.visibility = 'hidden';
+
+    const newCrossIcon = document.createElement('i');
+    newCrossIcon.classList.add('fa-solid', 'fa-xmark');
+    newCrossIcon.id = `cross-icon-hashtag`; // Ensure unique ID for each cross icon
+
+    container.appendChild(newHashtag);
+    container.appendChild(newMeasureWidth);
+    container.appendChild(newCrossIcon);
+
+    newHashtag.addEventListener("input", () => resizeTextArea(newHashtag));
+    newCrossIcon.addEventListener("click", () => {
+        localStorage.setItem(`removedHashtagElement${index}`, true);
+        newHashtag.remove();
+        newMeasureWidth.remove();
+        newCrossIcon.remove();
+    });
+
+    container.appendChild(plusIconHashtags);
 });
